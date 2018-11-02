@@ -5,15 +5,12 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    //backgroundColor: '#028090',
-    backgroundImage: 'url(../assets/images/space.jpg)'
   },
   main: {
     flex: 1,
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#028090',
   },
   headerBold: {
     color: 'white',

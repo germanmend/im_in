@@ -1,4 +1,4 @@
-import { AppRegistry, StyleSheet, Text, View, TextInput } from 'react-native'
+import { AppRegistry, StyleSheet, Text, View, TextInput, ImageBackground } from 'react-native'
 import Animation from 'lottie-react-native'
 import React, { Component } from 'react'
 import styles from './style'
@@ -6,6 +6,7 @@ import * as Services from './services'
 
 import user from '../assets/animations/a_user.json'
 import bird from '../assets/animations/birds.json'
+import space from '../assets/images/space4.jpg'
 
 export default class LogIn extends Component {
   static navigationOptions = { header: null }
@@ -13,7 +14,7 @@ export default class LogIn extends Component {
   async componentWillMount(){
     const user = await Services.currentUser()
     if(user && user.nick) {
-      this.props.navigation.navigate('List')
+      this.props.navigation.navigate('Events')
     }
   }
 
@@ -26,7 +27,7 @@ export default class LogIn extends Component {
     if(nick.trim() != '') {
       try {
         await Services.writeUserData(nick)
-        this.props.navigation.navigate('List')
+        this.props.navigation.navigate('Events')
       } catch (e) {
 
       }
@@ -35,7 +36,10 @@ export default class LogIn extends Component {
 
   render() {
     return (
-      <View style={ styles.container }>
+      <ImageBackground
+        style={ styles.container }
+        source={ space }
+        >
         <View style={ styles.main }>
           <View style={{ flexDirection: 'row' }}>
             <Text style = { styles.headerBold }>
@@ -108,7 +112,7 @@ export default class LogIn extends Component {
             </View>
           </View>
         </View>
-      </View>
+      </ImageBackground>
     );
   }
 }

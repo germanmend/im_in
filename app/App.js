@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { createStackNavigator } from 'react-navigation'
 import LogIn from './login/screen'
-import List from './list/screen'
+import Events from './events/screen'
 
 export default class ClassName extends Component {
   render() {
@@ -13,5 +13,5 @@ export default class ClassName extends Component {
 
 const AppStackNavigator = createStackNavigator({
   LogIn : { screen: LogIn },
-  List: { screen: List },
+  Events: { screen: Events },
 })
